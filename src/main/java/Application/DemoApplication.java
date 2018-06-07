@@ -7,8 +7,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(scanBasePackages = {"controller", "service", "component"})
-@EntityScan(basePackages = "entity")
-@EnableJpaRepositories(basePackages = "domain")
+@EntityScan(basePackages = "pojo")
+@EnableJpaRepositories(basePackages = "dao")
 @EnableConfigurationProperties
 public class DemoApplication {
 
