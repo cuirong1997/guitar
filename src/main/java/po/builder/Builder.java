@@ -1,21 +1,20 @@
-package pojo.wood;
+package po.builder;
 
 import javax.persistence.*;
 
 @Entity
-public class Wood implements java.io.Serializable {
+public class Builder implements java.io.Serializable {
 
-    //	CAMPHOR("camphor"),//樟木
-//	BRICH("birch"),//桦木
-//	KOREANPINE("koreanpine");//红松
+    //	JIANGSU("jiangsu"),SHANGHAI("shanghai"),SHANDONG("shandong");
     private Integer id;
+
     private String value;
 
-    public Wood() {
+    public Builder() {
     }
 
-    private Wood(String value) {
-        this.value = value;
+    public Builder(Integer id) {
+        this.id = id;
     }
 
     public String toString() {

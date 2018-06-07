@@ -1,6 +1,6 @@
 package dao;
 
-import pojo.guitar.Guitar;
+import po.guitar.Guitar;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

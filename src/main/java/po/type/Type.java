@@ -1,4 +1,4 @@
-package pojo.type;
+package po.type;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,8 +15,8 @@ public class Type implements java.io.Serializable {
     public Type() {
     }
 
-    private Type(String value) {
-        this.value = value;
+    public Type(Integer id) {
+        this.id = id;
     }
 
     public String toString() {

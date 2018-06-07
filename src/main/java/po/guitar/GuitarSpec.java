@@ -1,9 +1,9 @@
-package pojo.guitar;
+package po.guitar;
 
 
-import pojo.builder.Builder;
-import pojo.type.Type;
-import pojo.wood.Wood;
+import po.builder.Builder;
+import po.type.Type;
+import po.wood.Wood;
 
 public class GuitarSpec{
 	
@@ -17,22 +17,21 @@ public class GuitarSpec{
 	
 	private Wood topWood;
 	
-	private int numStrings;
+	private int serialNumber;
 
 
 	public GuitarSpec() {
-		super();
 	}
 
 	
-	public GuitarSpec(Builder builder, String model, Type type, Wood backWood, Wood topWood, int numStrings) {
+	public GuitarSpec(Builder builder, String model, Type type, Wood backWood, Wood topWood, int serialNumber) {
 		super();
 		this.builder = builder;
 		this.model = model;
 		this.type = type;
 		this.backWood = backWood;
 		this.topWood = topWood;
-		this.numStrings = numStrings;
+		this.serialNumber = serialNumber;
 	}
 
 
@@ -43,7 +42,7 @@ public class GuitarSpec{
 	      return false;
 	    if (otherSpec.type!=null && type != otherSpec.type)
 	      return false;
-	    if (otherSpec.numStrings>0 && numStrings != otherSpec.numStrings)
+	    if (otherSpec.serialNumber >0 && serialNumber != otherSpec.serialNumber)
 	      return false;
 	    if (otherSpec.backWood!=null&&backWood != otherSpec.backWood)
 	      return false;
@@ -51,6 +50,7 @@ public class GuitarSpec{
 	      return false;
 	    return true;
 	  }
+
 
 	public Builder getBuilder() {
 		return builder;
@@ -91,12 +91,12 @@ public class GuitarSpec{
 	public void setTopWood(Wood topWood) {
 		this.topWood = topWood;
 	}
-	public int getNumStrings() {
-		return numStrings;
+	public int getSerialNumber() {
+		return serialNumber;
 	}
 
-	public void setNumStrings(int numStrings) {
-		this.numStrings = numStrings;
+	public void setSerialNumber(int serialNumber) {
+		this.serialNumber = serialNumber;
 	}
 
 }
