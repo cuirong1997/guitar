@@ -9,11 +9,6 @@ import javax.persistence.*;
 @Entity
 public class Guitar implements java.io.Serializable {
 
-    /**
-     *
-     */
-    private static final long serialVersionUID = 325952505698299172L;
-
     private String id;
 
     private Double price;
@@ -21,26 +16,22 @@ public class Guitar implements java.io.Serializable {
     private GuitarSpec spec;
 
     public Guitar() {
-
+        this.spec = new GuitarSpec();
     }
 
-    public Guitar(Double price, Builder builder, String model, Type type, Wood backWood,
-        Wood topWood, Integer serialNumber) {
+    public Guitar(Double price, String builder, String model, String type, String backWood,
+        String topWood, Integer serialNumber) {
         this.price = price;
         this.spec = new GuitarSpec(builder, model, type, backWood, topWood, serialNumber);
     }
 
-    @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-    @JoinColumn(name = "builderId",referencedColumnName = "id")
-    public Builder getBuilder() {
+//    @ManyToOne(targetEntity = Builder.class,cascade={CascadeType.ALL},fetch = FetchType.LAZY)
+//    @JoinColumn(name = "builder",referencedColumnName = "value")
+    public String getBuilder() {
         return spec.getBuilder();
     }
 
-    public void setBuilder(Integer builderId) {
-        spec.setBuilder(new Builder(builderId));
-    }
-
-    public void setBuilder(Builder builder) {
+    public void setBuilder(String builder) {
         spec.setBuilder(builder);
     }
 
@@ -52,46 +43,34 @@ public class Guitar implements java.io.Serializable {
         spec.setModel(model);
     }
 
-    @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-    @JoinColumn(name = "typeId",referencedColumnName = "id")
-    public Type getType() {
+//    @ManyToOne(targetEntity = Type.class,cascade={CascadeType.ALL},fetch = FetchType.LAZY)
+//    @JoinColumn(name = "type",referencedColumnName = "value")
+    public String getType() {
         return spec.getType();
     }
 
-    public void setType(Integer typeId) {
-        spec.setType(new Type(typeId));
-    }
-
-    public void setType(Type type) {
+    public void setType(String type) {
         spec.setType(type);
     }
 
-    @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-    @JoinColumn(name = "backWoodId",referencedColumnName = "id")
-    public Wood getBackWood() {
+//    @ManyToOne(targetEntity = Wood.class,cascade={CascadeType.ALL},fetch = FetchType.LAZY)
+//    @JoinColumn(name = "backWood",referencedColumnName = "value")
+    public String getBackWood() {
         return spec.getBackWood();
     }
 
-    public void setBackWood(Wood backWood) {
+    public void setBackWood(String backWood) {
         spec.setBackWood(backWood);
     }
 
-    public void setBackWood(Integer backWoodId) {
-        spec.setBackWood(new Wood(backWoodId));
-    }
-
-    @ManyToOne(cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-    @JoinColumn(name = "topWoodId",referencedColumnName = "id")
-    public Wood getTopWood() {
+//    @ManyToOne(targetEntity = Wood.class,cascade={CascadeType.ALL},fetch = FetchType.LAZY)
+//    @JoinColumn(name = "topWood",referencedColumnName = "value")
+    public String getTopWood() {
         return spec.getTopWood();
     }
 
-    public void setTopWood(Wood topWood) {
+    public void setTopWood(String topWood) {
         spec.setTopWood(topWood);
-    }
-
-    public void setTopWood(Integer topWoodId) {
-        spec.setTopWood(new Wood(topWoodId));
     }
 
     public Integer getSerialNumber() {
@@ -128,5 +107,14 @@ public class Guitar implements java.io.Serializable {
 
     public void setSpec(GuitarSpec spec) {
         this.spec = spec;
+    }
+
+    @Override
+    public String toString() {
+        return "Guitar{" +
+            "id='" + id + '\'' +
+            ", price=" + price +
+            ", spec=" + spec +
+            '}';
     }
 }

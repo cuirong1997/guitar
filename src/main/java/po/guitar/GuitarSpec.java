@@ -1,21 +1,17 @@
 package po.guitar;
 
 
-import po.builder.Builder;
-import po.type.Type;
-import po.wood.Wood;
-
 public class GuitarSpec{
 	
-	private Builder builder;
+	private String builder;
 	
 	private String model;
 
-	private Type type;
+	private String type;
 	
-	private Wood backWood;
+	private String backWood;
 	
-	private Wood topWood;
+	private String topWood;
 	
 	private int serialNumber;
 
@@ -24,7 +20,7 @@ public class GuitarSpec{
 	}
 
 	
-	public GuitarSpec(Builder builder, String model, Type type, Wood backWood, Wood topWood, int serialNumber) {
+	public GuitarSpec(String builder, String model, String type, String backWood, String topWood, int serialNumber) {
 		super();
 		this.builder = builder;
 		this.model = model;
@@ -52,11 +48,11 @@ public class GuitarSpec{
 	  }
 
 
-	public Builder getBuilder() {
+	public String getBuilder() {
 		return builder;
 	}
 
-	public void setBuilder(Builder builder) {
+	public void setBuilder(String builder) {
 		this.builder = builder;
 	}
 
@@ -68,29 +64,30 @@ public class GuitarSpec{
 		this.model = model;
 	}
 
-	public Type getType() {
+	public String getType() {
 		return type;
 	}
 
-	public void setType(Type type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 
-	public Wood getBackWood() {
+	public String getBackWood() {
 		return backWood;
 	}
 
-	public void setBackWood(Wood backWood) {
+	public void setBackWood(String backWood) {
 		this.backWood = backWood;
 	}
 
-	public Wood getTopWood() {
+	public String getTopWood() {
 		return topWood;
 	}
 
-	public void setTopWood(Wood topWood) {
+	public void setTopWood(String topWood) {
 		this.topWood = topWood;
 	}
+
 	public int getSerialNumber() {
 		return serialNumber;
 	}

@@ -19,4 +19,8 @@ public class GuitarService {
         Inventory inventory = new Inventory();
         return inventory.search(guitarSpec, guitarRepository.findAll());
     }
+
+    public List<Guitar> getAll() {
+        return guitarRepository.findAll();
+    }
 }
