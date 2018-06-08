@@ -1,6 +1,8 @@
 package po.guitar;
 
 
+import java.util.Objects;
+
 public class GuitarSpec{
 	
 	private String builder;
@@ -32,17 +34,17 @@ public class GuitarSpec{
 
 
 	public boolean matches(GuitarSpec otherSpec) {
-	    if (otherSpec.builder!=null && builder != otherSpec.builder)
+	    if (otherSpec.builder!=null && !Objects.equals(builder, otherSpec.builder))
 	      return false;
 	    if(otherSpec.getModel()!=null && otherSpec.getModel().trim().length()>0 && !otherSpec.getModel().toLowerCase().equals(model!=null?model.toLowerCase():null))
 	      return false;
-	    if (otherSpec.type!=null && type != otherSpec.type)
+	    if (otherSpec.type!=null && !Objects.equals(type, otherSpec.type))
 	      return false;
 	    if (otherSpec.serialNumber >0 && serialNumber != otherSpec.serialNumber)
 	      return false;
-	    if (otherSpec.backWood!=null&&backWood != otherSpec.backWood)
+	    if (otherSpec.backWood!=null&& !Objects.equals(backWood, otherSpec.backWood))
 	      return false;
-	    if (otherSpec.topWood!=null && topWood != otherSpec.topWood)
+	    if (otherSpec.topWood!=null && !Objects.equals(topWood, otherSpec.topWood))
 	      return false;
 	    return true;
 	  }

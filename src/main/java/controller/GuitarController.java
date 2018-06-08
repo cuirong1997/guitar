@@ -21,12 +21,21 @@ public class GuitarController {
 
     @PostMapping(value = "search", consumes = {APPLICATION_JSON_UTF8_VALUE})
     public ResponseEntity<List<Guitar>> searchGuitars(@RequestBody GuitarSpec guitarSpec) {
-
         return ResponseEntity.ok(guitarService.searchGuitar(guitarSpec));
+    }
+
+    @PostMapping(value = "")
+    public ResponseEntity<Guitar> saveOne(@RequestBody Guitar guitar) {
+        return ResponseEntity.ok(guitarService.save(guitar));
     }
 
     @GetMapping(value = "")
     public ResponseEntity<List<Guitar>> getAll() {
         return ResponseEntity.ok(guitarService.getAll());
+    }
+
+    @DeleteMapping(value = "{id}")
+    public ResponseEntity deleteOne(@PathVariable Integer id) {
+        return ResponseEntity.ok(guitarService.deleteById(id));
     }
 }

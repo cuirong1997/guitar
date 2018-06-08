@@ -1,15 +1,11 @@
 package po.guitar;
 
-import po.builder.Builder;
-import po.type.Type;
-import po.wood.Wood;
-
 import javax.persistence.*;
 
 @Entity
 public class Guitar implements java.io.Serializable {
 
-    private String id;
+    private Integer id;
 
     private Double price;
 
@@ -25,8 +21,7 @@ public class Guitar implements java.io.Serializable {
         this.spec = new GuitarSpec(builder, model, type, backWood, topWood, serialNumber);
     }
 
-//    @ManyToOne(targetEntity = Builder.class,cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-//    @JoinColumn(name = "builder",referencedColumnName = "value")
+
     public String getBuilder() {
         return spec.getBuilder();
     }
@@ -43,8 +38,7 @@ public class Guitar implements java.io.Serializable {
         spec.setModel(model);
     }
 
-//    @ManyToOne(targetEntity = Type.class,cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-//    @JoinColumn(name = "type",referencedColumnName = "value")
+
     public String getType() {
         return spec.getType();
     }
@@ -53,8 +47,6 @@ public class Guitar implements java.io.Serializable {
         spec.setType(type);
     }
 
-//    @ManyToOne(targetEntity = Wood.class,cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-//    @JoinColumn(name = "backWood",referencedColumnName = "value")
     public String getBackWood() {
         return spec.getBackWood();
     }
@@ -63,8 +55,6 @@ public class Guitar implements java.io.Serializable {
         spec.setBackWood(backWood);
     }
 
-//    @ManyToOne(targetEntity = Wood.class,cascade={CascadeType.ALL},fetch = FetchType.LAZY)
-//    @JoinColumn(name = "topWood",referencedColumnName = "value")
     public String getTopWood() {
         return spec.getTopWood();
     }
@@ -83,11 +73,11 @@ public class Guitar implements java.io.Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

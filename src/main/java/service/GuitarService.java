@@ -23,4 +23,13 @@ public class GuitarService {
     public List<Guitar> getAll() {
         return guitarRepository.findAll();
     }
+
+    public Guitar save(Guitar guitar) {
+        return guitarRepository.save(guitar);
+    }
+
+    public boolean deleteById(Integer id) {
+        guitarRepository.deleteById(id);
+        return true;
+    }
 }
