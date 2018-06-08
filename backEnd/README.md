@@ -1,2 +1,0 @@
-# Guitar base on OOAD
-
