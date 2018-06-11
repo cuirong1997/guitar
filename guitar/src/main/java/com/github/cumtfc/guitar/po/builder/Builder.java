@@ -16,6 +16,7 @@ public class Builder implements java.io.Serializable {
         this.value = value;
     }
 
+    @Override
     public String toString() {
         return value;
     }
