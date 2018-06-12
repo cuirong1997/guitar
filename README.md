@@ -11,7 +11,7 @@
  npm start
 ```
 ## 切换数据库
-更改springboot的数据源配置就好
+更改`application.properties`的`spring.profiles.active=sqlite||mysql`
 
 
 ### 运行主界面
